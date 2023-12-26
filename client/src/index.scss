@@ -1,0 +1,211 @@
+// import google fonts --poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    body {
+        @apply bg-dark-1 relative;
+    }
+
+    h1.title {
+        @apply sm:text-3xl text-2xl font-medium text-center font-poppins text-light-1;
+    }
+
+    .form-container {
+        @apply p-4;
+        form {
+            @apply flex flex-col gap-3 mt-10 sm:min-w-[100%];
+
+            .input-container {
+                @apply flex flex-col gap-1;
+
+                label {
+                    @apply text-light-1 text-xl font-poppins;
+                }
+                span {
+                    @apply text-sm text-gray-300;
+                }
+                input {
+                    @apply h-[40px] w-[100%] rounded-md outline-none pl-2 font-mono text-dark-1;
+                }
+            }
+
+            button {
+                @apply bg-red-500 bg-primary-500 px-4 py-2 rounded-md cursor-pointer mt-3;
+
+                div {
+                    @apply flex gap-2 items-center justify-center;
+
+                    span {
+                        @apply text-light-1 font-semibold text-xl;
+                    }
+                }
+
+                span {
+                    @apply text-light-1 font-semibold text-xl;
+                }
+            }
+        }
+
+       .form-links {
+        @apply flex gap-3 items-center justify-center sm:flex-row flex-col mt-3;
+
+        p {
+            @apply text-light-1 font-poppins;
+        }
+
+        a {
+            @apply text-primary-500 font-semibold underline
+        }
+       } 
+    }
+
+    .navbar {
+       @apply flex justify-between items-center gap-2 sm:gap-4 py-4 px-3 border-b-primary-600 border-b-[2px] w-full bg-dark-1 fixed top-0 z-20;
+
+       .left {
+        @apply text-light-1 text-xl;
+       }
+       
+       .search {
+        @apply hidden lg:flex flex-row-reverse gap-2 items-center justify-between rounded-md overflow-hidden bg-white pl-2 font-mono;
+
+        input {
+            @apply h-[40px] w-[400px] pl-2 outline-none;
+        }
+
+        svg {
+            @apply text-gray-500;
+        }
+       }
+
+       .right {
+        @apply flex items-center justify-between gap-3 sm:gap-10;
+
+        div {
+            @apply relative;
+
+            span {
+                @apply absolute -top-3 -right-1 py-1 px-2 bg-red-900 text-white rounded-full;
+            }
+        }
+
+        svg {
+            @apply text-3xl text-light-1 cursor-pointer hover:text-primary-500;
+        }
+
+        span {
+            @apply text-sm text-light-1;
+        }
+       }
+    }
+
+    .sidebar {
+        @apply py-[90px] px-5 hidden md:flex flex-col gap-2 border-r-primary-600 border-r-[2px] h-full fixed h-full w-[200px];
+
+        .container { 
+            @apply flex flex-col;
+
+            h3 {
+                @apply text-light-1 font-poppins pb-1;
+            }
+
+            ul {
+                @apply pl-2;
+
+                li {
+                    @apply flex gap-2 items-center justify-start py-2 px-2;
+
+                    svg {
+                        @apply text-light-1 text-[18px];
+                    }
+                    a {
+                        @apply text-light-1 text-[13px];
+                    }
+
+                    &:hover {
+                        @apply bg-primary-500 rounded-sm;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+.mobile_bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 w-full py-3  px-4 shadow-2xl md:hidden flex justify-between items-center gap-1 bg-dark-1; 
+
+    .inactive-link{
+        @apply flex flex-col gap-1 justify-center items-center text-light-1;
+
+        span {
+            @apply text-sm text-primary-500 max-[480px]:text-[10px];
+        }
+    }
+
+    .active-link {
+        @apply flex flex-col gap-1 justify-center items-center text-primary-500;
+        svg {
+            @apply text-3xl;
+        }
+        span {
+            @apply text-sm text-primary-500 max-[480px]:text-[10px];
+        }
+    }
+
+}
+
+.product_form-container {
+    @apply mt-2 rounded-md shadow-lg;
+
+    form {
+        @apply w-full p-2;
+
+        .input-container {
+            @apply flex flex-col flex-1 gap-1 mb-4 min-w-[250px];
+
+            label {
+                @apply text-light-1 text-xl font-medium mb-2;
+            }
+
+            input {
+                @apply p-2 rounded-sm outline-none font-mono;
+            }
+        }
+
+        button.create-btn{
+            @apply py-2 px-4 rounded-md cursor-pointer shadow-md bg-primary-600 text-light-1 font-poppins mx-auto block mt-4 mb-10 min-w-[200px] hover:bg-primary-500;
+
+            div {
+                @apply flex gap-2 items-center justify-between;
+            }
+        }
+    }
+}
+
+div.ql-container.ql-snow {
+    @apply border-none outline-none w-full;
+}
+
+div.ql-toolbar.ql-snow {
+    @apply border-none outline-none;
+}
+
+div.ql-editor.ql-blank{
+    @apply min-h-[200px] placeholder:text-light-1 bg-white;
+
+    &::before {
+        @apply text-dark-3 dark:text-light-2;
+    }
+}
+
+.content {
+    @apply md:flex-1 overflow-x-hidden overflow-y-auto md:pl-[220px] pl-[20px] py-[90px] pr-[20px];
+}
+
