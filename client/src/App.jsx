@@ -20,7 +20,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 
 const App = () => {
-  axios.defaults.baseURL = "http://localhost:5000";
+  axios.defaults.baseURL = import.meta.env.VITE_BASE_URL
   axios.defaults.withCredentials = true;
   return (
     <Routes>
