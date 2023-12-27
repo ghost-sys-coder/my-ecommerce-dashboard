@@ -65,7 +65,7 @@
     }
 
     .navbar {
-       @apply flex justify-between items-center gap-2 sm:gap-4 py-4 px-3 border-b-primary-600 border-b-[2px] w-full bg-dark-1 fixed top-0 z-20;
+       @apply flex justify-between items-center gap-2 sm:gap-4 py-4 px-3 border-b-primary-600 border-b-[2px] w-full bg-dark-1 fixed top-0 left-0 right-0 z-20;
 
        .left {
         @apply text-light-1 text-xl;
