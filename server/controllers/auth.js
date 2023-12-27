@@ -91,7 +91,7 @@ const loginUser = async (req, res) => {
  * ? Logout user
  */
 const logoutUser = async (req, res) => {
-  res.cookie("authToken", "", { maxAge: 1 }).json({ message: "Logged Out" });
+  res.cookie("authToken", "", { maxAge: 0, httpOnly:true, sameSite: 'None', secure: true }).json({ message: "Logged Out" });
 };
 
 const userProfile = async (req, res) => {
