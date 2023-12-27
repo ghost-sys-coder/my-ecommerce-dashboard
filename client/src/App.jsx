@@ -12,7 +12,8 @@ import {
   Category,
   AddProduct,
   Delivery,
-  EditProduct
+  EditProduct,
+  Profile
 } from "./pages";
 import { Layout } from "./components";
 
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="category" element={<Category />} />
         <Route path="orders" element={<Orders />} />
         <Route path="delivery" element={<Delivery />} />
+        <Route path="profile" element={<Profile />} />
       </Route>
       <Route element={<ProtectedRoute />}>
         <Route path="login" element={<Login />} />

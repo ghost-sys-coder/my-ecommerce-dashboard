@@ -105,7 +105,7 @@
     }
 
     .sidebar {
-        @apply py-[90px] px-5 hidden md:flex flex-col gap-2 border-r-primary-600 border-r-[2px] h-full fixed h-full w-[200px];
+        @apply overflow-y-auto py-[90px] px-5 hidden md:flex flex-col gap-2 border-r-primary-600 border-r-[2px] fixed h-full w-[200px];
 
         .container { 
             @apply flex flex-col;
@@ -202,6 +202,23 @@ div.ql-editor.ql-blank{
 
     &::before {
         @apply text-dark-3 dark:text-light-2;
+    }
+}
+
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #4a5568 #2d3748;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #4a5568;
+    }
+
+    &::-webkit-scrollbar-track{
+        background-color: #2d3748;
     }
 }
 

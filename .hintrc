@@ -10,5 +10,16 @@
     "not edge <= 114",
     "not opera <= 99",
     "not samsung <= 21"
-  ]
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "scrollbar-color",
+          "scrollbar-width"
+        ]
+      }
+    ]
+  }
 }

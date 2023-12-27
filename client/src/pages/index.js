@@ -10,3 +10,4 @@ export { default as AddProduct } from "./AddProduct";
 export { default as Category } from "./Category";
 export { default as Delivery } from "./Delivery";
 export { default as EditProduct } from "./EditProduct";
+export { default as Profile } from "./Profile";

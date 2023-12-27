@@ -22,7 +22,7 @@ export default function Sidebar() {
     }
   }
   return (
-    <nav className="sidebar">
+    <nav className="sidebar custom-scrollbar">
       <div className='container'>
         <h3>MAIN</h3>
         <ul>
