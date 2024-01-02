@@ -14,8 +14,8 @@ function DropDownList({selected, setSelected}) {
         setLoading(true);
         const fetchSubCategories = async () => {
             try {
-                const { data } = await axios.get('/api/categories/subcategories');
-                console.log(data)
+                const { data } = await axios.get('/api/categories');
+                // console.log(data)
                 setCategories(data);
                 setSelected(data[0])
             } catch (error) {

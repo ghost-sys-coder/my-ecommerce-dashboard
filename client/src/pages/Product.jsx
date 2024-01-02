@@ -22,21 +22,6 @@ export default function Product() {
     user: { Admin },
   } = useAuthContext();
 
-  /** delete product */
-  const handleDeleteProduct = async ()=> {
-    try {
-      const { status, data: {message} } = await axios.delete(`/api/products/${id}`);
-      toast.success(message, successOptions);
-      if (status === 200) {
-        setTimeout(() => {
-          navigate('/products');
-        }, [2000])
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error('Failed to product!', errorOptions);
-    }
-  }
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -53,6 +38,24 @@ export default function Product() {
     };
     fetchProduct();
   }, [id]);
+
+
+  /** delete product */
+  const handleDeleteProduct = async ()=> {
+    try {
+      const { status, data: {message} } = await axios.delete(`/api/products/${id}`);
+      toast.success(message, successOptions);
+      if (status === 200) {
+        setTimeout(() => {
+          navigate('/products');
+        }, [2000])
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error('Failed to product!', errorOptions);
+    }
+  }
+
 
   return (
     <div className="content">
@@ -87,7 +90,7 @@ export default function Product() {
           </div>
           <div className="flex justify-start items-center gap-3 py-3">
             <h3 className="text-xl font-poppins">Product Category:</h3>
-            <p className="text-primary-600 font-poppins">{product?.category}</p>
+            <p className="text-primary-600 font-poppins">{product?.category?.category}</p>
           </div>
           <div className="mt-2">
             <h3 className="text-xl font-poppins">Product Description:</h3>

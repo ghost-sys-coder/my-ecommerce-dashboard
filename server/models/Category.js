@@ -9,6 +9,13 @@ const CategorySchema = new Schema({
     description: {
         type: String,
         required: [true, 'Category Description is required!']
+    },
+    imgUrl: {
+        type: String,
+        required: [true, 'Category Image required!']
+    },
+    parentCategory: {
+        type: Schema.Types.ObjectId,
     }
 }, { timestamps: true });
 

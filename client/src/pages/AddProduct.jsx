@@ -51,7 +51,7 @@ export default function AddProduct() {
         images: productData.images,
         price: productData.price,
         quantity: productData.quantity,
-        category: selected.category, colors: productData.colors, 
+        category: selected._id, colors: productData.colors, 
         sizes: productData.sizes,
         productDetails: productData.productDetails,
         manufacturer: productData.manufacturer,
@@ -71,6 +71,7 @@ export default function AddProduct() {
       setIsCreatingProduct(false);
     }
   };
+
 
   return (
     <div className="content">
@@ -162,17 +163,18 @@ export default function AddProduct() {
           </div>
           <ExtraDetails setProductData={setProductData} />
           <Description setProductData={setProductData} />
-          <ImageUploader onImageSelect={handleImageSelect} />
+          <ImageUploader onImageSelect={handleImageSelect} btnText={'Upload Product Images'} />
           <div className="grid gap-5 lg:grid-cols-4 md:grid-cols-3 sm:grids-col-2 grid-cols-1 my-5">
-            {productData.images?.map((imageUrl, index) => (
-              <Image
-                  key={index}
+            {productData.images?.map((imageUrl) => (
+              <div key={imageUrl} className="flex flex-col gap-2">
+                <Image
                   cloudName="dljizbsqx"
                   publicId={imageUrl}
                   width="100"
                   crop="scale"
-                  className='w-[100%] h-[100%] object-cover rounded-md overflow-hidden'
+                  className='w-full h-[300px] object-cover rounded-md overflow-hidden'
                 />
+              </div>
 
             ))}
           </div>

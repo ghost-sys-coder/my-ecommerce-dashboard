@@ -8,6 +8,5 @@ export { default as Color } from "./Color";
 export { default as DropDownList } from "./DropDownList";
 export { default as ExtraDetails } from "./ExtraDetails";
 export { default as Description } from "./Description";
-export { default as CloudinaryWidget } from "./CloudinaryWidget";
 export { default as ImageUploader } from "./ImageUploader";
 export { default as ProductBox } from "./ProductBox";

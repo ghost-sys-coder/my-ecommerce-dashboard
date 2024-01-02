@@ -24,7 +24,13 @@ const UserSchema = new Schema({
         default: false
     },
     verificationToken: {
-        type: String
+        type: String,
+    },
+    resetCode: {
+        type: String,
+    },
+    resetCodeExpiration: {
+        type: Date
     },
     addresses: [
         {

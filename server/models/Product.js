@@ -24,7 +24,8 @@ const ProductSchema = new Schema ({
         default: 0
     },
     category: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'Category',
         required: [true, 'Product Category required!']
     },
     sizes: {
@@ -41,6 +42,16 @@ const ProductSchema = new Schema ({
     },
     store: {
         type: String
+    },
+    isFeatured: {
+        type: Boolean,
+        default: false
+    },
+    minPrice: {
+        type: Number
+    },
+    maxNumber: {
+        type: Number
     }
 }, { timestamps: true });
 
