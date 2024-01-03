@@ -104,11 +104,7 @@ const editProduct = async (req, res) => {
     const updatedProduct = await Product.findByIdAndUpdate(id, req.body, {
       new: true,
     });
-    res.status(200).json({
-      success: true,
-      message: "Product updated!",
-      updatedProduct,
-    });
+    res.status(200).json(updatedProduct);
   } catch (error) {
     console.log(error);
     return res.status(500).json({ error: error.message });
